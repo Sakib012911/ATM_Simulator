@@ -11,9 +11,9 @@ public class Otp {
     public void sendOtp(String email, int userid){
         Random ran = new Random();
         int otp = ran.nextInt(900000) + 100000;
-        temp c=null;
+        Conn c=null;
         try {
-            c=new temp();
+            c=new Conn();
             String q="select account_id from accounts where user_id=?";
             PreparedStatement pp=c.connection.prepareStatement(q);
             pp.setInt(1,userid);
@@ -43,9 +43,9 @@ public class Otp {
     }
 
     public  boolean verifyOtp(int enteredOTP,int accountid){
-        temp c=null;
+        Conn c=null;
         try  {
-             c=new temp();
+             c=new Conn();
             String query = "SELECT otp_code, expires_at FROM otp_verification WHERE account_id = ? ORDER BY expires_at DESC LIMIT 1";
 
             PreparedStatement ps = c.connection.prepareStatement(query);
@@ -74,9 +74,9 @@ public class Otp {
     }
 
     private void markOTPAsUsed(int accountid) {
-        temp c=null;
+        Conn c=null;
         try {
-            c=new temp();
+            c=new Conn();
             String query = "UPDATE otp_verification SET status = 'Used' WHERE account_id =?";
             PreparedStatement ps = c.connection.prepareStatement(query);
             ps.setInt(1, accountid);

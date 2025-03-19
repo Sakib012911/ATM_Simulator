@@ -164,9 +164,9 @@ public class Accountdetails extends JFrame implements ActionListener {
 
 //            long first4=(ran.nextLong()%900L)+100L;
 //            String accid=""+Math.abs(first4);
-            temp c1=null;
+            Conn c1=null;
             try {
-                c1 = new temp();
+                c1 = new Conn();
                 if (e.getSource()==s){
                     if (atype.equals("")){
                         JOptionPane.showMessageDialog(null,"Fill all the fields");

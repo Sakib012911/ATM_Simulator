@@ -1,6 +1,6 @@
 package atm.machine.card;
 
-import atm.machine.temp;
+import atm.machine.Conn;
 
 import javax.swing.*;
 import java.awt.*;
@@ -77,9 +77,9 @@ public class Cardlogin extends JFrame implements ActionListener {
                PleaseWaitLoading cardloading= new PleaseWaitLoading();
                 setVisible(false);
                 Timer timer=new Timer(1500,_->{
-                    temp c=null;
+                    Conn c=null;
                     try {
-                        c = new temp();
+                        c = new Conn();
                         String q = "SELECT* FROM ACCOUNTS WHERE CARD_NO=?";
                         PreparedStatement ptt = c.connection.prepareStatement(q);
                         ptt.setString(1, cardno);

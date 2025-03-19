@@ -141,9 +141,9 @@ public class EnterPin extends JFrame implements ActionListener {
         new EnterPin(0,0,"",false,0);
     }
     public  boolean verifyPin(String enteredPin,int accountid){
-        temp c=null;
+        Conn c=null;
         try  {
-            c=new temp();
+            c=new Conn();
             String query = "SELECT pin  FROM accounts WHERE account_id = ?";
 
             PreparedStatement ps = c.connection.prepareStatement(query);

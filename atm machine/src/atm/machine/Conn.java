@@ -2,10 +2,10 @@ package atm.machine;
 
 import java.sql.*;
 
-public class temp {
+public class Conn {
   public  Connection connection;
   public  Statement  statement;
-    public temp(){
+    public Conn(){
         try {
              connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/atmmachine","root","");
              statement= connection.createStatement();

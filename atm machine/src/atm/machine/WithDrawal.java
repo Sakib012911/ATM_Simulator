@@ -78,7 +78,7 @@ public class WithDrawal extends JFrame implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            temp c=null;
+            Conn c=null;
             int amou=Integer.parseInt(amount.getText());
             if (amou>10000){
                 JOptionPane.showMessageDialog(null,"Only  10000 Withdrawan at a time","Alert",JOptionPane.ERROR_MESSAGE);
@@ -86,7 +86,7 @@ public class WithDrawal extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null,"Amount should Above 500","Alert",JOptionPane.ERROR_MESSAGE);
             } else {
                 try {
-                    c=new temp();
+                    c=new Conn();
                     String k="SELECT EMAIL FROM USERS WHERE USER_ID=?";
                     String kk="SELECT ACCOUNT_ID FROM ACCOUNTS WHERE USER_ID=?";
                     PreparedStatement pttt=c.connection.prepareStatement(k);
@@ -141,9 +141,9 @@ public class WithDrawal extends JFrame implements ActionListener{
         }
 
     public boolean withdrawnMethod(int accid,int amount){
-            temp c=null;
+            Conn c=null;
             try{
-                c=new temp();
+                c=new Conn();
                 String s="select balance from accounts where account_id=?";
                 PreparedStatement pp=c.connection.prepareStatement(s);
                 pp.setInt(1,accid);

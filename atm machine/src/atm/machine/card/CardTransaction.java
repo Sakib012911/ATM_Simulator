@@ -122,9 +122,9 @@ public class CardTransaction extends JFrame implements ActionListener {
                 new WithDrawal(userid,false);
                 setVisible(false);
             }  else if (e.getSource()==btn3){
-                temp c=null;
+                Conn c=null;
                 try {
-                    c=new temp();
+                    c=new Conn();
                     String s="select balance from accounts where user_id=?";
                     PreparedStatement pp=c.connection.prepareStatement(s);
                     pp.setInt(1,userid);

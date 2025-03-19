@@ -82,14 +82,14 @@ public class User extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        temp c=null;
+        Conn c=null;
         String formno = first;
         String name = textName.getText();
         String email = textEmail.getText();
         String Phone =textPhone.getText();
 
         try{
-            c = new temp();
+            c = new Conn();
             if (textName.getText().equals("") || textEmail.getText().equals("") || textPhone.getText().equals("") ){
                 JOptionPane.showMessageDialog(null, "Fill all the fields");
             } else if (textPhone.getText().length()>10 || textPhone.getText().length()<10) {

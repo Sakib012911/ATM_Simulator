@@ -98,9 +98,9 @@ public class Simlesstransaction extends JFrame implements ActionListener {
             }  else if (e.getSource()==btn3){
                 /* this create connection with db and checks balance form accounts table using userid
                 */
-            temp c=null;
+            Conn c=null;
             try {
-                c=new temp();
+                c=new Conn();
                 String s="select balance from accounts where user_id=?";
                 PreparedStatement pp=c.connection.prepareStatement(s);
                 pp.setInt(1,userid);

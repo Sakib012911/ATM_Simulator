@@ -1,6 +1,6 @@
 package atm.machine.card;
 
-import atm.machine.temp;
+import atm.machine.Conn;
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,9 +44,9 @@ public class MiniStatement extends JFrame implements ActionListener {
         btn1.setBounds(230,350,130,30);
         btn1.addActionListener(this);
         add(btn1);
-        temp c=null;
+        Conn c=null;
         try {
-            c=new temp();
+            c=new Conn();
             String query = "SELECT amount, transaction_type, transaction_date FROM transactions WHERE account_id =? ORDER BY transaction_id DESC";
             PreparedStatement pt=c.connection.prepareStatement(query);
             pt.setInt(1,accountid);

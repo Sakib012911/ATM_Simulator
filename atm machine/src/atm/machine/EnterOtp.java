@@ -80,9 +80,9 @@ public class EnterOtp extends JFrame implements ActionListener {
                 boolean result=o.verifyOtp(ootp,accountid);
                 if (result){
                     if (issetpin){
-                        temp c=null;
+                        Conn c=null;
                         try {
-                            c=new temp();
+                            c=new Conn();
                             String ss="Update accounts set pin=? where account_id=?";
                             PreparedStatement ptt=c.connection.prepareStatement(ss);
                             ptt.setString(1,pin);

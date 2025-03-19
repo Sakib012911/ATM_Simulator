@@ -134,9 +134,9 @@ public class Fastwithdrawal extends JFrame implements ActionListener {
     }
 
     void withdrawn(int amou) {
-        temp c=null;
+        Conn c=null;
         try {
-            c = new temp();
+            c = new Conn();
             String k = "SELECT EMAIL FROM USERS WHERE USER_ID=?";
             String kk = "SELECT ACCOUNT_ID FROM ACCOUNTS WHERE USER_ID=?";
             PreparedStatement pttt = c.connection.prepareStatement(k);

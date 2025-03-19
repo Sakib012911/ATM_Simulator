@@ -1,6 +1,6 @@
 package atm.machine.setpin;
 
-import atm.machine.temp;
+import atm.machine.Conn;
 import atm.machine.EnterOtp;
 import atm.machine.Otp;
 import atm.machine.TransactionProcess;
@@ -91,9 +91,9 @@ public class EnterPin extends JFrame implements ActionListener {
                             SwingWorker<Void, Void> emailWorker = new SwingWorker<>() {
                                 @Override
                                 protected Void doInBackground() throws Exception {
-                                    temp c=null;
+                                    Conn c=null;
                                     try{
-                                        c=new temp();
+                                        c=new Conn();
                                         String s="Select email from users where user_id=?";
                                         PreparedStatement pt=c.connection.prepareStatement(s);
                                         pt.setInt(1,userid);

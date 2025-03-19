@@ -1,6 +1,6 @@
 package atm.machine.simless;
 
-import atm.machine.temp;
+import atm.machine.Conn;
 
 import javax.swing.*;
 import java.awt.*;
@@ -71,7 +71,7 @@ public class Simlesslogin extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        temp c=null;
+        Conn c=null;
         String phonee=phone.getText();
 //        checks number is less than 10 or greater than 10 digit
         if (phone.getText().length()>10 || phone.getText().length()<10){
@@ -81,7 +81,7 @@ public class Simlesslogin extends JFrame implements ActionListener {
 //            this creats connections with  db and fetch userid from users table and
 //            pass to the simlesstransaction class
             try {
-                c=new temp();
+                c=new Conn();
                 String q="SELECT* FROM USERS WHERE PHONE=?";
                 PreparedStatement ptt=c.connection.prepareStatement(q);
                  ptt.setString(1,phonee);

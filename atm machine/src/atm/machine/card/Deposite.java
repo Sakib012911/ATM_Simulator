@@ -1,6 +1,6 @@
 package atm.machine.card;
 
-import atm.machine.temp;
+import atm.machine.Conn;
 import atm.machine.PlayMusic;
 import atm.machine.TransactionProcess;
 
@@ -95,9 +95,9 @@ public class Deposite extends JFrame implements ActionListener {
             }).start();
             // Create a 1-second delay using Timer
             Timer timer = new Timer(6000, _ -> {
-                temp c=null;
+                Conn c=null;
                 try{
-                       c=new temp();
+                       c=new Conn();
                        String s="select* from accounts where user_id=?";
                        PreparedStatement p=c.connection.prepareStatement(s);
                        p.setInt(1,userid);
