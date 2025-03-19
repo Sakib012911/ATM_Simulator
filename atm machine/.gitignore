@@ -1,0 +1,16 @@
+# IntelliJ project settings
+.idea/
+*.iml
+
+# Compilation output
+/out/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.class
+*.jar
+
+# OS-specific files
+.DS_Store
+Thumbs.db
